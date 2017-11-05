@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Weather events most adversely impacting human health and economic activity in the United States</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Weather events most adversely impacting human health and economic activity in the United States</h1>
+
+<h2><em>Heather Geiger- November 5, 2017</em></h2>
+
+<h3>Synopsis</h3>
+
+<p>This document uses the NOAA (National Oceanic and Atomospheric Administration) Storm Database to summarize the weather events that have had the greatest impact on both human health (fatalities and injuries) and economic activity (crop and property damage) in the United States.</p>
+
+<h3>Data Processing</h3>
+
+<p>First step - read in the data.</p>
+
+<pre><code class="r">storms &lt;- read.csv(&quot;repdata-data-StormData.csv&quot;,header=TRUE,stringsAsFactors=FALSE,allowEscapes=TRUE)
+</code></pre>
+
+<p>Select only columns of interest from the data frame.</p>
+
+<p>Then, show the first few lines (minus the &ldquo;REMARKS&rdquo; column which can be quite wide since it is free text).</p>
+
+<pre><code class="r">storms &lt;- storms[,c(&quot;BGN_DATE&quot;, &quot;STATE&quot;, &quot;EVTYPE&quot;, &quot;FATALITIES&quot;, &quot;INJURIES&quot;, &quot;PROPDMG&quot;, &quot;PROPDMGEXP&quot;, &quot;CROPDMG&quot;, &quot;CROPDMGEXP&quot;, &quot;REMARKS&quot;)]
+head(storms[,setdiff(colnames(storms),&quot;REMARKS&quot;)])
+</code></pre>
+
+<pre><code>##             BGN_DATE STATE  EVTYPE FATALITIES INJURIES PROPDMG PROPDMGEXP
+## 1  4/18/1950 0:00:00    AL TORNADO          0       15    25.0          K
+## 2  4/18/1950 0:00:00    AL TORNADO          0        0     2.5          K
+## 3  2/20/1951 0:00:00    AL TORNADO          0        2    25.0          K
+## 4   6/8/1951 0:00:00    AL TORNADO          0        2     2.5          K
+## 5 11/15/1951 0:00:00    AL TORNADO          0        2     2.5          K
+## 6 11/15/1951 0:00:00    AL TORNADO          0        6     2.5          K
+##   CROPDMG CROPDMGEXP
+## 1       0           
+## 2       0           
+## 3       0           
+## 4       0           
+## 5       0           
+## 6       0
+</code></pre>
+
+<p>Convert BGN_DATE to date format. Then, use this column to filter the data frame to include only events in or after 1996.</p>
+
+<p>This is because according to the history of the database, the types of events recorded were fairly limited in the past.
+See <a href="https://www.ncdc.noaa.gov/stormevents/versions.jsp">https://www.ncdc.noaa.gov/stormevents/versions.jsp</a>.</p>
+
+<pre><code class="r">storms$BGN_DATE &lt;- strptime(storms$BGN_DATE,format=&quot;%m/%d/%Y&quot;)
+storms &lt;- storms[which(storms$BGN_DATE &gt;= &quot;1996-01-01&quot;),]
+</code></pre>
+
+<p>Filter out events with no impact to humans or property.</p>
+
+<pre><code class="r">storms &lt;- storms[which(storms$FATALITIES &gt; 0 | storms$INJURIES &gt; 0 | storms$PROPDMG &gt; 0 | storms$CROPDMG &gt; 0),]
+</code></pre>
+
+<p>Now, we need to clean the data up a bit.</p>
+
+<p>For one, we need to multiply the PROPDMG and CROPDMG columns by the appropriate numbers based on PROPDMGEXP and CROPDMGEXP.</p>
+
+<p>Let&#39;s check the possible values in those columns.</p>
+
+<pre><code class="r">unique(c(storms$PROPDMGEXP,storms$CROPDMGEXP))
+</code></pre>
+
+<pre><code>## [1] &quot;K&quot; &quot;&quot;  &quot;M&quot; &quot;B&quot;
+</code></pre>
+
+<p>Going to assume no exponent means keep the value as is, then K = 1,000, M = 1 million, and B = 1 billion.</p>
+
+<pre><code class="r">storms$PROPDMGEXP[which(storms$PROPDMGEXP == &quot;&quot;)] &lt;- 1
+storms$PROPDMGEXP[which(storms$PROPDMGEXP == &quot;K&quot;)] &lt;- 1e3
+storms$PROPDMGEXP[which(storms$PROPDMGEXP == &quot;M&quot;)] &lt;- 1e6
+storms$PROPDMGEXP[which(storms$PROPDMGEXP == &quot;B&quot;)] &lt;- 1e9
+
+storms$CROPDMGEXP[which(storms$CROPDMGEXP == &quot;&quot;)] &lt;- 1
+storms$CROPDMGEXP[which(storms$CROPDMGEXP == &quot;K&quot;)] &lt;- 1e3
+storms$CROPDMGEXP[which(storms$CROPDMGEXP == &quot;M&quot;)] &lt;- 1e6
+storms$CROPDMGEXP[which(storms$CROPDMGEXP == &quot;B&quot;)] &lt;- 1e9
+</code></pre>
+
+<p>Let&#39;s reassign the PROPDMG and CROPDMG columns to be equal to PROPDMG times PROPDMGEXP and CROPDMG times CROPDMGEXP.
+Then, exclude the PROPDMGEXP and CROPDMGEXP columns from the data frame.</p>
+
+<pre><code class="r">storms$PROPDMG &lt;- storms$PROPDMG*as.numeric(storms$PROPDMGEXP)
+storms$CROPDMG &lt;- storms$CROPDMG*as.numeric(storms$CROPDMGEXP)
+
+storms &lt;- storms[,c(&quot;BGN_DATE&quot;, &quot;STATE&quot;, &quot;EVTYPE&quot;, &quot;FATALITIES&quot;, &quot;INJURIES&quot;, &quot;PROPDMG&quot;,&quot;CROPDMG&quot;,&quot;REMARKS&quot;)]
+</code></pre>
+
+<p>Let&#39;s look at the distribution of each of our variables of interest.</p>
+
+<pre><code class="r">apply(storms[,c(&quot;FATALITIES&quot;, &quot;INJURIES&quot;)],2,function(x)hist(x,plot=FALSE)[c(&quot;breaks&quot;,&quot;counts&quot;)])
+</code></pre>
+
+<pre><code>## $FATALITIES
+## $FATALITIES$breaks
+##  [1]   0  10  20  30  40  50  60  70  80  90 100 110 120 130 140 150 160
+## 
+## $FATALITIES$counts
+##  [1] 201249     45     12      4      5      0      0      1      0      1
+## [11]      0      0      0      0      0      1
+## 
+## 
+## $INJURIES
+## $INJURIES$breaks
+##  [1]    0   50  100  150  200  250  300  350  400  450  500  550  600  650
+## [15]  700  750  800  850  900  950 1000 1050 1100 1150
+## 
+## $INJURIES$counts
+##  [1] 201159     90     29     15      5      3      2      1      1      4
+## [11]      2      1      0      1      1      3      0      0      0      0
+## [21]      0      0      1
+</code></pre>
+
+<pre><code class="r">apply(storms[,c(&quot;PROPDMG&quot;,&quot;CROPDMG&quot;)],2,function(x)hist(log10(x + 1),plot=FALSE,breaks=seq(from=0,to=12,by=1))[c(&quot;breaks&quot;,&quot;counts&quot;)])
+</code></pre>
+
+<pre><code>## $PROPDMG
+## $PROPDMG$breaks
+##  [1]  0  1  2  3  4  5  6  7  8  9 10 11 12
+## 
+## $PROPDMG$counts
+##  [1] 12050  1144  7924 79741 72426 20739  5898  1189   180    23     3
+## [12]     1
+## 
+## 
+## $CROPDMG
+## $CROPDMG$breaks
+##  [1]  0  1  2  3  4  5  6  7  8  9 10 11 12
+## 
+## $CROPDMG$counts
+##  [1] 182627      1    136   6188   6945   3724   1286    344     66      1
+## [11]      0      0
+</code></pre>
+
+<p>There are four events with PROPDMG &gt; 10 billion and one event with CROPDMG &gt; 1 billion. </p>
+
+<p>Let&#39;s just check these out in more detail and make sure they make sense.</p>
+
+<pre><code class="r">storms[which(storms$PROPDMG &gt; 1e10 | storms$CROPDMG &gt; 1e9),c(&quot;BGN_DATE&quot;, &quot;STATE&quot;, &quot;EVTYPE&quot;, &quot;FATALITIES&quot;, &quot;INJURIES&quot;, &quot;PROPDMG&quot;,&quot;CROPDMG&quot;)]
+</code></pre>
+
+<pre><code>##          BGN_DATE STATE            EVTYPE FATALITIES INJURIES   PROPDMG
+## 577675 2005-08-28    LA HURRICANE/TYPHOON          0        0 1.693e+10
+## 577676 2005-08-29    LA       STORM SURGE          0        0 3.130e+10
+## 581535 2005-08-29    MS       STORM SURGE          0        0 1.126e+10
+## 581537 2005-08-29    MS HURRICANE/TYPHOON         15      104 5.880e+09
+## 605953 2006-01-01    CA             FLOOD          0        0 1.150e+11
+##         CROPDMG
+## 577675 0.00e+00
+## 577676 0.00e+00
+## 581535 0.00e+00
+## 581537 1.51e+09
+## 605953 3.25e+07
+</code></pre>
+
+<p>Looks like the other events with very large damage were around the time of Hurricane Katrina.</p>
+
+<p>Let&#39;s check out the event that was not (the flood).</p>
+
+<pre><code class="r">storms[which(storms$PROPDMG &gt; 1e11),]
+</code></pre>
+
+<pre><code>##          BGN_DATE STATE EVTYPE FATALITIES INJURIES  PROPDMG  CROPDMG
+## 605953 2006-01-01    CA  FLOOD          0        0 1.15e+11 32500000
+##                                                                                                                                                                                                                                                                                                                                                                                               REMARKS
+## 605953 Major flooding continued into the early hours of January 1st, before the Napa River finally fell below flood stage and the water receeded. Flooding was severe in Downtown Napa from the Napa Creek and the City and Parks Department was hit with $6 million in damage alone. The City of Napa had 600 homes with moderate damage, 150 damaged businesses with costs of at least $70 million.
+</code></pre>
+
+<p>Based on the description of the event, looks like that PROPDMG value may have been a typo.</p>
+
+<p>Change to 115 million instead of billion.</p>
+
+<pre><code class="r">storms$PROPDMG[which(storms$PROPDMG &gt; 1e11)] &lt;- 115e6
+</code></pre>
+
+<p>Now, let&#39;s look at how many different event types there are.</p>
+
+<pre><code class="r">length(unique(storms$EVTYPE))
+</code></pre>
+
+<pre><code>## [1] 222
+</code></pre>
+
+<p>Too many. We need to convert to the official 48 types.</p>
+
+<p>Let&#39;s make a translation table with each type in the original list versus the type of the 48.</p>
+
+<p>This requires some manual review.</p>
+
+<p>I am going to use the manually selected translations as defined by Github developer pjpjean.</p>
+
+<p>Available here: <a href="https://raw.githubusercontent.com/pjpjean/RepData_PeerAssessment2/master/evtypes-directive-10-1605.csv">https://raw.githubusercontent.com/pjpjean/RepData_PeerAssessment2/master/evtypes-directive-10-1605.csv</a>.</p>
+
+<pre><code class="r">original_list_evtypes &lt;- unique(storms$EVTYPE)
+original_list_evtypes &lt;- original_list_evtypes[order(original_list_evtypes)]
+
+originals_1_to_100 &lt;- c(&quot;   HIGH SURF ADVISORY&quot;,&quot; FLASH FLOOD&quot;,&quot; TSTM WIND&quot;,&quot; TSTM WIND (G45)&quot;,&quot;AGRICULTURAL FREEZE&quot;,&quot;ASTRONOMICAL HIGH TIDE&quot;,&quot;ASTRONOMICAL LOW TIDE&quot;,&quot;AVALANCHE&quot;,&quot;Beach Erosion&quot;,&quot;BLACK ICE&quot;,&quot;BLIZZARD&quot;,&quot;BLOWING DUST&quot;,&quot;blowing snow&quot;,&quot;BRUSH FIRE&quot;,&quot;COASTAL  FLOODING/EROSION&quot;,&quot;COASTAL EROSION&quot;,&quot;Coastal Flood&quot;,&quot;COASTAL FLOOD&quot;,&quot;Coastal Flooding&quot;,&quot;COASTAL FLOODING&quot;,&quot;COASTAL FLOODING/EROSION&quot;,&quot;Coastal Storm&quot;,&quot;COASTAL STORM&quot;,&quot;COASTALSTORM&quot;,&quot;Cold&quot;,&quot;COLD&quot;,&quot;COLD AND SNOW&quot;,&quot;Cold Temperature&quot;,&quot;COLD WEATHER&quot;,&quot;COLD/WIND CHILL&quot;,&quot;DAM BREAK&quot;,&quot;Damaging Freeze&quot;,&quot;DAMAGING FREEZE&quot;,&quot;DENSE FOG&quot;,&quot;DENSE SMOKE&quot;,&quot;DOWNBURST&quot;,&quot;DROUGHT&quot;,&quot;DROWNING&quot;,&quot;DRY MICROBURST&quot;,&quot;Dust Devil&quot;,&quot;DUST DEVIL&quot;,&quot;DUST STORM&quot;,&quot;Early Frost&quot;,&quot;Erosion/Cstl Flood&quot;,&quot;EXCESSIVE HEAT&quot;,&quot;EXCESSIVE SNOW&quot;,&quot;Extended Cold&quot;,&quot;Extreme Cold&quot;,&quot;EXTREME COLD&quot;,&quot;EXTREME COLD/WIND CHILL&quot;,&quot;EXTREME WINDCHILL&quot;,&quot;FALLING SNOW/ICE&quot;,&quot;FLASH FLOOD&quot;,&quot;FLASH FLOOD/FLOOD&quot;,&quot;FLOOD&quot;,&quot;FLOOD/FLASH/FLOOD&quot;,&quot;FOG&quot;,&quot;Freeze&quot;,&quot;FREEZE&quot;,&quot;Freezing drizzle&quot;,&quot;Freezing Drizzle&quot;,&quot;FREEZING DRIZZLE&quot;,&quot;FREEZING FOG&quot;,&quot;Freezing Rain&quot;,&quot;FREEZING RAIN&quot;,&quot;Freezing Spray&quot;,&quot;FROST&quot;,&quot;Frost/Freeze&quot;,&quot;FROST/FREEZE&quot;,&quot;FUNNEL CLOUD&quot;,&quot;Glaze&quot;,&quot;GLAZE&quot;,&quot;gradient wind&quot;,&quot;Gradient wind&quot;,&quot;GRADIENT WIND&quot;,&quot;GUSTY WIND&quot;,&quot;GUSTY WIND/HAIL&quot;,&quot;GUSTY WIND/HVY RAIN&quot;,&quot;Gusty wind/rain&quot;,&quot;Gusty winds&quot;,&quot;Gusty Winds&quot;,&quot;GUSTY WINDS&quot;,&quot;HAIL&quot;,&quot;HARD FREEZE&quot;,&quot;HAZARDOUS SURF&quot;,&quot;HEAT&quot;,&quot;Heat Wave&quot;,&quot;HEAVY RAIN&quot;,&quot;Heavy Rain/High Surf&quot;,&quot;HEAVY SEAS&quot;,&quot;HEAVY SNOW&quot;,&quot;Heavy snow shower&quot;,&quot;Heavy Surf&quot;,&quot;HEAVY SURF&quot;,&quot;Heavy surf and wind&quot;,&quot;HEAVY SURF/HIGH SURF&quot;,&quot;HIGH SEAS&quot;,&quot;High Surf&quot;,&quot;HIGH SURF&quot;,&quot;HIGH SWELLS&quot;)
+
+originals_101plus &lt;- c(&quot;HIGH WATER&quot;,&quot;HIGH WIND&quot;,&quot;HIGH WIND (G40)&quot;,&quot;HIGH WINDS&quot;,&quot;HURRICANE&quot;,&quot;Hurricane Edouard&quot;,&quot;HURRICANE/TYPHOON&quot;,&quot;HYPERTHERMIA/EXPOSURE&quot;,&quot;Hypothermia/Exposure&quot;,&quot;HYPOTHERMIA/EXPOSURE&quot;,&quot;Ice jam flood (minor&quot;,&quot;ICE ON ROAD&quot;,&quot;ICE ROADS&quot;,&quot;ICE STORM&quot;,&quot;ICY ROADS&quot;,&quot;Lake Effect Snow&quot;,&quot;LAKE EFFECT SNOW&quot;,&quot;LAKE-EFFECT SNOW&quot;,&quot;LAKESHORE FLOOD&quot;,&quot;LANDSLIDE&quot;,&quot;LANDSLIDES&quot;,&quot;Landslump&quot;,&quot;LANDSPOUT&quot;,&quot;LATE SEASON SNOW&quot;,&quot;LIGHT FREEZING RAIN&quot;,&quot;Light snow&quot;,&quot;Light Snow&quot;,&quot;LIGHT SNOW&quot;,&quot;Light Snowfall&quot;,&quot;LIGHTNING&quot;,&quot;Marine Accident&quot;,&quot;MARINE HAIL&quot;,&quot;MARINE HIGH WIND&quot;,&quot;MARINE STRONG WIND&quot;,&quot;MARINE THUNDERSTORM WIND&quot;,&quot;MARINE TSTM WIND&quot;,&quot;Microburst&quot;,&quot;MIXED PRECIP&quot;,&quot;Mixed Precipitation&quot;,&quot;MIXED PRECIPITATION&quot;,&quot;MUD SLIDE&quot;,&quot;Mudslide&quot;,&quot;MUDSLIDE&quot;,&quot;Mudslides&quot;,&quot;NON TSTM WIND&quot;,&quot;NON-SEVERE WIND DAMAGE&quot;,&quot;NON-TSTM WIND&quot;,&quot;Other&quot;,&quot;OTHER&quot;,&quot;RAIN&quot;,&quot;RAIN/SNOW&quot;,&quot;RECORD HEAT&quot;,&quot;RIP CURRENT&quot;,&quot;RIP CURRENTS&quot;,&quot;RIVER FLOOD&quot;,&quot;River Flooding&quot;,&quot;RIVER FLOODING&quot;,&quot;ROCK SLIDE&quot;,&quot;ROGUE WAVE&quot;,&quot;ROUGH SEAS&quot;,&quot;ROUGH SURF&quot;,&quot;SEICHE&quot;,&quot;SMALL HAIL&quot;,&quot;Snow&quot;,&quot;SNOW&quot;,&quot;SNOW AND ICE&quot;,&quot;SNOW SQUALL&quot;,&quot;Snow Squalls&quot;,&quot;SNOW SQUALLS&quot;,&quot;STORM SURGE&quot;,&quot;STORM SURGE/TIDE&quot;,&quot;Strong Wind&quot;,&quot;STRONG WIND&quot;,&quot;Strong Winds&quot;,&quot;STRONG WINDS&quot;,&quot;THUNDERSTORM&quot;,&quot;THUNDERSTORM WIND&quot;,&quot;THUNDERSTORM WIND (G40)&quot;,&quot;Tidal Flooding&quot;,&quot;TIDAL FLOODING&quot;,&quot;TORNADO&quot;,&quot;Torrential Rainfall&quot;,&quot;TROPICAL DEPRESSION&quot;,&quot;TROPICAL STORM&quot;,&quot;Tstm Wind&quot;,&quot;TSTM WIND&quot;,&quot;TSTM WIND  (G45)&quot;,&quot;TSTM WIND (41)&quot;,&quot;TSTM WIND (G35)&quot;,&quot;TSTM WIND (G40)&quot;,&quot;TSTM WIND (G45)&quot;,&quot;TSTM WIND 40&quot;,&quot;TSTM WIND 45&quot;,&quot;TSTM WIND AND LIGHTNING&quot;,&quot;TSTM WIND G45&quot;,&quot;TSTM WIND/HAIL&quot;,&quot;TSUNAMI&quot;,&quot;TYPHOON&quot;,&quot;Unseasonable Cold&quot;,&quot;UNSEASONABLY COLD&quot;,&quot;UNSEASONABLY WARM&quot;,&quot;UNSEASONAL RAIN&quot;,&quot;URBAN/SML STREAM FLD&quot;,&quot;VOLCANIC ASH&quot;,&quot;WARM WEATHER&quot;,&quot;WATERSPOUT&quot;,&quot;WET MICROBURST&quot;,&quot;Whirlwind&quot;,&quot;WHIRLWIND&quot;,&quot;WILD/FOREST FIRE&quot;,&quot;WILDFIRE&quot;,&quot;Wind&quot;,&quot;WIND&quot;,&quot;WIND AND WAVE&quot;,&quot;Wind Damage&quot;,&quot;WINDS&quot;,&quot;WINTER STORM&quot;,&quot;WINTER WEATHER&quot;,&quot;WINTER WEATHER MIX&quot;,&quot;WINTER WEATHER/MIX&quot;,&quot;Wintry Mix&quot;,&quot;WINTRY MIX&quot;)
+
+translations_1_to_100 &lt;- c(&quot;High Surf&quot;,&quot;Flash Flood&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Frost/Freeze&quot;,&quot;Storm Surge/Tide&quot;,&quot;Astronomical Low Tide&quot;,&quot;Avalanche&quot;,&quot;Coastal Flood&quot;,&quot;Winter Weather&quot;,&quot;Blizzard&quot;,&quot;Dust Storm&quot;,&quot;Winter Storm&quot;,&quot;Wildfire&quot;,&quot;Coastal Flood&quot;,&quot;Coastal Flood&quot;,&quot;Coastal Flood&quot;,&quot;Coastal Flood&quot;,&quot;Coastal Flood&quot;,&quot;Coastal Flood&quot;,&quot;Coastal Flood&quot;,&quot;Tropical Storm&quot;,&quot;Tropical Storm&quot;,&quot;Tropical Storm&quot;,&quot;Cold/Wind Chill&quot;,&quot;Cold/Wind Chill&quot;,&quot;Cold/Wind Chill&quot;,&quot;Cold/Wind Chill&quot;,&quot;Cold/Wind Chill&quot;,&quot;Cold/Wind Chill&quot;,&quot;Flash Flood&quot;,&quot;Frost/Freeze&quot;,&quot;Frost/Freeze&quot;,&quot;Dense Fog&quot;,&quot;Dense Smoke&quot;,&quot;Thunderstorm Wind&quot;,&quot;Drought&quot;,NA,&quot;Thunderstorm Wind&quot;,&quot;Dust Devil&quot;,&quot;Dust Devil&quot;,&quot;Dust Storm&quot;,&quot;Winter Weather&quot;,&quot;Coastal Flood&quot;,&quot;Excessive Heat&quot;,&quot;Heavy Snow&quot;,&quot;Extreme Cold/Wind Chill&quot;,&quot;Extreme Cold/Wind Chill&quot;,&quot;Extreme Cold/Wind Chill&quot;,&quot;Extreme Cold/Wind Chill&quot;,&quot;Extreme Cold/Wind Chill&quot;,&quot;Winter Weather&quot;,&quot;Flash Flood&quot;,&quot;Flash Flood&quot;,&quot;Flood&quot;,&quot;Flash Flood&quot;,&quot;Dense Fog&quot;,&quot;Frost/Freeze&quot;,&quot;Frost/Freeze&quot;,&quot;Frost/Freeze&quot;,&quot;Frost/Freeze&quot;,&quot;Frost/Freeze&quot;,&quot;Freezing Fog&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Frost/Freeze&quot;,&quot;Frost/Freeze&quot;,&quot;Frost/Freeze&quot;,&quot;Funnel Cloud&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;High Wind&quot;,&quot;High Wind&quot;,&quot;High Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Hail&quot;,&quot;Frost/Freeze&quot;,&quot;High Surf&quot;,&quot;Heat&quot;,&quot;Heat&quot;,&quot;Heavy Rain&quot;,&quot;Heavy Rain&quot;,&quot;Marine High Wind&quot;,&quot;Heavy Snow&quot;,&quot;Heavy Snow&quot;,&quot;High Surf&quot;,&quot;High Surf&quot;,&quot;High Surf&quot;,&quot;High Surf&quot;,&quot;High Surf&quot;,&quot;High Surf&quot;,&quot;High Surf&quot;,&quot;High Surf&quot;)
+
+translations_101plus &lt;- c(&quot;High Surf&quot;,&quot;High Wind&quot;,&quot;High Wind&quot;,&quot;High Wind&quot;,&quot;Hurricane (Typhoon)&quot;,&quot;Hurricane (Typhoon)&quot;,&quot;Hurricane (Typhoon)&quot;,&quot;Heat&quot;,&quot;Cold/Wind Chill&quot;,&quot;Cold/Wind Chill&quot;,&quot;Flash Flood&quot;,&quot;Frost/Freeze&quot;,&quot;Frost/Freeze&quot;,&quot;Ice Storm&quot;,&quot;Frost/Freeze&quot;,&quot;Lake-Effect Snow&quot;,&quot;Lake-Effect Snow&quot;,&quot;Lake-Effect Snow&quot;,&quot;Lakeshore Flood&quot;,&quot;Debris Flow&quot;,&quot;Debris Flow&quot;,&quot;Debris Flow&quot;,&quot;Debris Flow&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Lightning&quot;,NA,&quot;Marine Hail&quot;,&quot;Marine High Wind&quot;,&quot;Marine Strong Wind&quot;,&quot;Marine Thunderstorm Wind&quot;,&quot;Marine Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Heavy Rain&quot;,&quot;Heavy Rain&quot;,&quot;Heavy Rain&quot;,&quot;Debris Flow&quot;,&quot;Debris Flow&quot;,&quot;Debris Flow&quot;,&quot;Debris Flow&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,NA,NA,&quot;Heavy Rain&quot;,&quot;Heavy Rain&quot;,&quot;Heat&quot;,&quot;Rip Current&quot;,&quot;Rip Current&quot;,&quot;Flood&quot;,&quot;Flood&quot;,&quot;Flood&quot;,&quot;Debris Flow&quot;,&quot;Storm Surge/Tide&quot;,&quot;Storm Surge/Tide&quot;,&quot;High Surf&quot;,&quot;Seiche&quot;,&quot;Hail&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Storm&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Storm Surge/Tide&quot;,&quot;Storm Surge/Tide&quot;,&quot;Strong Wind&quot;,&quot;Strong Wind&quot;,&quot;Strong Wind&quot;,&quot;Strong Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Storm Surge/Tide&quot;,&quot;Storm Surge/Tide&quot;,&quot;Tornado&quot;,&quot;Heavy Rain&quot;,&quot;Tropical Depression&quot;,&quot;Tropical Storm&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Tsunami&quot;,&quot;Hurricane (Typhoon)&quot;,&quot;Cold/Wind Chill&quot;,&quot;Cold/Wind Chill&quot;,&quot;Heat&quot;,&quot;Heavy Rain&quot;,&quot;Flash Flood&quot;,&quot;Volcanic Ash&quot;,&quot;Heat&quot;,&quot;Waterspout&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Thunderstorm Wind&quot;,&quot;Wildfire&quot;,&quot;Wildfire&quot;,&quot;Strong Wind&quot;,&quot;Strong Wind&quot;,&quot;Strong Wind&quot;,&quot;Strong Wind&quot;,&quot;Strong Wind&quot;,&quot;Winter Storm&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;,&quot;Winter Weather&quot;)
+
+originals &lt;- c(originals_1_to_100,originals_101plus)
+translations &lt;- c(translations_1_to_100,translations_101plus)
+
+original_vs_translations &lt;- data.frame(Original = originals,Translation = translations,stringsAsFactors=FALSE)
+original_vs_translations &lt;- original_vs_translations[match(original_list_evtypes,original_vs_translations$Original),]
+</code></pre>
+
+<p>Let&#39;s just check a few of the 48 event types and see which values from the original table they were matched with, to make sure the annotation makes sense.</p>
+
+<pre><code class="r">original_vs_translations[which(original_vs_translations$Translation == &quot;Thunderstorm Wind&quot;),]
+</code></pre>
+
+<pre><code>##                    Original       Translation
+## 36                DOWNBURST Thunderstorm Wind
+## 39           DRY MICROBURST Thunderstorm Wind
+## 76               GUSTY WIND Thunderstorm Wind
+## 77          GUSTY WIND/HAIL Thunderstorm Wind
+## 78      GUSTY WIND/HVY RAIN Thunderstorm Wind
+## 79          Gusty wind/rain Thunderstorm Wind
+## 80              Gusty winds Thunderstorm Wind
+## 81              Gusty Winds Thunderstorm Wind
+## 82              GUSTY WINDS Thunderstorm Wind
+## 137              Microburst Thunderstorm Wind
+## 146  NON-SEVERE WIND DAMAGE Thunderstorm Wind
+## 145           NON TSTM WIND Thunderstorm Wind
+## 147           NON-TSTM WIND Thunderstorm Wind
+## 176            THUNDERSTORM Thunderstorm Wind
+## 177       THUNDERSTORM WIND Thunderstorm Wind
+## 178 THUNDERSTORM WIND (G40) Thunderstorm Wind
+## 185               Tstm Wind Thunderstorm Wind
+## 3                 TSTM WIND Thunderstorm Wind
+## 186               TSTM WIND Thunderstorm Wind
+## 192            TSTM WIND 40 Thunderstorm Wind
+## 188          TSTM WIND (41) Thunderstorm Wind
+## 193            TSTM WIND 45 Thunderstorm Wind
+## 194 TSTM WIND AND LIGHTNING Thunderstorm Wind
+## 189         TSTM WIND (G35) Thunderstorm Wind
+## 190         TSTM WIND (G40) Thunderstorm Wind
+## 4           TSTM WIND (G45) Thunderstorm Wind
+## 195           TSTM WIND G45 Thunderstorm Wind
+## 187        TSTM WIND  (G45) Thunderstorm Wind
+## 191         TSTM WIND (G45) Thunderstorm Wind
+## 196          TSTM WIND/HAIL Thunderstorm Wind
+## 207          WET MICROBURST Thunderstorm Wind
+## 208               Whirlwind Thunderstorm Wind
+## 209               WHIRLWIND Thunderstorm Wind
+</code></pre>
+
+<pre><code class="r">original_vs_translations$Original[which(original_vs_translations$Translation == &quot;Winter Weather&quot;)]
+</code></pre>
+
+<pre><code>##  [1] &quot;BLACK ICE&quot;           &quot;Early Frost&quot;         &quot;FALLING SNOW/ICE&quot;   
+##  [4] &quot;Freezing Rain&quot;       &quot;FREEZING RAIN&quot;       &quot;Freezing Spray&quot;     
+##  [7] &quot;Glaze&quot;               &quot;GLAZE&quot;               &quot;LATE SEASON SNOW&quot;   
+## [10] &quot;LIGHT FREEZING RAIN&quot; &quot;Light snow&quot;          &quot;Light Snow&quot;         
+## [13] &quot;LIGHT SNOW&quot;          &quot;Light Snowfall&quot;      &quot;Snow&quot;               
+## [16] &quot;SNOW&quot;                &quot;SNOW SQUALL&quot;         &quot;Snow Squalls&quot;       
+## [19] &quot;SNOW SQUALLS&quot;        &quot;WINTER WEATHER&quot;      &quot;WINTER WEATHER MIX&quot; 
+## [22] &quot;WINTER WEATHER/MIX&quot;  &quot;Wintry Mix&quot;          &quot;WINTRY MIX&quot;
+</code></pre>
+
+<pre><code class="r">original_vs_translations$Original[which(original_vs_translations$Translation == &quot;High Surf&quot;)]
+</code></pre>
+
+<pre><code>##  [1] &quot;HAZARDOUS SURF&quot;        &quot;Heavy Surf&quot;           
+##  [3] &quot;HEAVY SURF&quot;            &quot;Heavy surf and wind&quot;  
+##  [5] &quot;HEAVY SURF/HIGH SURF&quot;  &quot;HIGH SEAS&quot;            
+##  [7] &quot;High Surf&quot;             &quot;HIGH SURF&quot;            
+##  [9] &quot;   HIGH SURF ADVISORY&quot; &quot;HIGH SWELLS&quot;          
+## [11] &quot;HIGH WATER&quot;            &quot;ROUGH SURF&quot;
+</code></pre>
+
+<p>Looks good!</p>
+
+<p>Now, let&#39;s just reassign the event types in the table.</p>
+
+<pre><code class="r">for(i in 1:nrow(original_vs_translations))
+{
+evtype &lt;- original_vs_translations$Original[i]
+translation &lt;- original_vs_translations$Translation[i]
+storms$EVTYPE[which(storms$EVTYPE == evtype)] &lt;- translation
+}
+</code></pre>
+
+<p>The data set is now cleaned and ready to go.</p>
+
+<p>Now let&#39;s get the sum of fatalities and injuries per event type.</p>
+
+<p>Also get the sum of crop and property damage in a separate table.</p>
+
+<pre><code class="r">sum_fatalities_per_evtype &lt;- aggregate(storms$FATALITIES,by=list(storms$EVTYPE),FUN=sum)
+sum_injuries_per_evtype &lt;- aggregate(storms$INJURIES,by=list(storms$EVTYPE),FUN=sum)
+
+sum_fatalities_and_injuries_per_evtype &lt;- data.frame(Fatalities = sum_fatalities_per_evtype$x,Injuries = sum_injuries_per_evtype$x,row.names=as.vector(sum_fatalities_per_evtype$Group.1),check.names=FALSE)
+
+sum_property_damage_per_evtype &lt;- aggregate(storms$PROPDMG,by=list(storms$EVTYPE),FUN=sum)
+sum_crop_damage_per_evtype &lt;- aggregate(storms$CROPDMG,by=list(storms$EVTYPE),FUN=sum)
+
+sum_property_and_crop_damage_per_evtype &lt;- data.frame(Crop.Damage = sum_crop_damage_per_evtype$x,Property.Damage = sum_property_damage_per_evtype$x,row.names=as.vector(sum_property_damage_per_evtype$Group.1),check.names=FALSE)
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>Across the United States, which weather events are most harmful with respect to human health?</h4>
+
+<p>We are going to only plot events where the total number of adverse human impacts (fatalities + injuries) is greater than or equal to the median.</p>
+
+<p>Then, order by total fatalities + injuries in the plot.</p>
+
+<pre><code class="r">sum_fatalities_and_injuries_per_evtype &lt;- sum_fatalities_and_injuries_per_evtype[which(sum_fatalities_and_injuries_per_evtype$Fatalities + sum_fatalities_and_injuries_per_evtype$Injuries &gt;= median(sum_fatalities_and_injuries_per_evtype$Fatalities + sum_fatalities_and_injuries_per_evtype$Injuries)),]
+
+sum_fatalities_and_injuries_per_evtype &lt;- sum_fatalities_and_injuries_per_evtype[order(sum_fatalities_and_injuries_per_evtype$Fatalities + sum_fatalities_and_injuries_per_evtype$Injuries,decreasing=TRUE),]
+</code></pre>
+
+<p>Plot as a stacked barplot.</p>
+
+<pre><code class="r">#Transform (switch rows and columns).
+
+sum_fatalities_and_injuries_per_evtype &lt;- t(sum_fatalities_and_injuries_per_evtype)
+
+#Change some of the column names to make them shorter and fit on plot better.
+
+column_names &lt;- colnames(sum_fatalities_and_injuries_per_evtype)
+column_names[which(column_names == &quot;Thunderstorm Wind&quot;)] &lt;- &quot;Tstm Wind&quot;
+column_names[grep(&#39;Hurricane&#39;,column_names)] &lt;- &quot;Hurricane&quot;
+column_names[grep(&#39;Extreme Cold&#39;,column_names)] &lt;- &quot;Extreme Cold&quot;
+column_names[which(column_names == &quot;Cold/Wind Chill&quot;)] &lt;- &quot;Cold&quot;
+
+colnames(sum_fatalities_and_injuries_per_evtype) &lt;- column_names
+
+#Add 3 empty columns so there will be room for legend.
+
+sum_fatalities_and_injuries_per_evtype &lt;- cbind(sum_fatalities_and_injuries_per_evtype,matrix(NA,nrow=2,ncol=3))
+
+#Ready to make plot.
+
+barplot(sum_fatalities_and_injuries_per_evtype,col=c(&quot;blue&quot;,&quot;gold&quot;),xlab=&quot;&quot;,ylab=&quot;Number of adverse human impact events&quot;,main=&quot;Total fatalities and injuries\nFor event types most dangerous to human health\nJanuary 1, 1996 to November 30, 2011&quot;,las=2,cex.names=0.7)
+legend(&quot;topright&quot;,legend=c(&quot;Fatalities&quot;,&quot;Injuries&quot;),pch=22,pt.bg=c(&quot;blue&quot;,&quot;gold&quot;),bty=&quot;n&quot;,x.intersp=0.15)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-18"/></p>
+
+<p>Tornadoes and excessive heat are the most dangerous to human health, as defined by total associated fatalities and injuries during the time period studied.</p>
+
+<h4>Across the United States, which weather events are most harmful with respect to economic damage?</h4>
+
+<p>Again, plot only for certain events. Here we will require that total damage (regular property damage plus crop damage) is greater than or equal to the median.</p>
+
+<p>Then, order by total damage in the plot.</p>
+
+<pre><code class="r">sum_property_and_crop_damage_per_evtype &lt;- sum_property_and_crop_damage_per_evtype[which((sum_property_and_crop_damage_per_evtype$Crop.Damage + sum_property_and_crop_damage_per_evtype$Property.Damage) &gt;= median(sum_property_and_crop_damage_per_evtype$Crop.Damage + sum_property_and_crop_damage_per_evtype$Property.Damage)),]
+
+sum_property_and_crop_damage_per_evtype &lt;- sum_property_and_crop_damage_per_evtype[order(sum_property_and_crop_damage_per_evtype$Crop.Damage + sum_property_and_crop_damage_per_evtype$Property.Damage,decreasing=TRUE),]
+
+#Do same transformations and cleaning as for the fatalities and injuries plot.
+
+sum_property_and_crop_damage_per_evtype &lt;- t(sum_property_and_crop_damage_per_evtype)
+
+column_names &lt;- colnames(sum_property_and_crop_damage_per_evtype)
+column_names[which(column_names == &quot;Thunderstorm Wind&quot;)] &lt;- &quot;Tstm Wind&quot;
+column_names[grep(&#39;Hurricane&#39;,column_names)] &lt;- &quot;Hurricane&quot;
+column_names[grep(&#39;Extreme Cold&#39;,column_names)] &lt;- &quot;Extreme Cold&quot;
+column_names[which(column_names == &quot;Cold/Wind Chill&quot;)] &lt;- &quot;Cold&quot;
+column_names[grep(&#39;Storm Surge&#39;,column_names)] &lt;- &quot;Storm Surge&quot;
+
+colnames(sum_property_and_crop_damage_per_evtype) &lt;- column_names
+
+sum_property_and_crop_damage_per_evtype &lt;- cbind(sum_property_and_crop_damage_per_evtype,matrix(NA,nrow=2,ncol=3))
+
+#Convert to billions.
+sum_property_and_crop_damage_per_evtype &lt;- sum_property_and_crop_damage_per_evtype/1e9
+
+#Plot.
+
+barplot(sum_property_and_crop_damage_per_evtype,col=c(&quot;blue&quot;,&quot;gold&quot;),xlab=&quot;&quot;,ylab=&quot;Economic damage (billions of dollars)&quot;,main=&quot;Total economic damage (including property and crop)\nFor most economically damaging event types\nJanuary 1, 1996 to November 30, 2011&quot;,las=2,cex.names=0.7)
+legend(&quot;topright&quot;,legend=c(&quot;Crop damage&quot;,&quot;Property damage&quot;),pch=22,pt.bg=c(&quot;blue&quot;,&quot;gold&quot;),bty=&quot;n&quot;,x.intersp=0.15)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-19"/></p>
+
+<p>Hurricanes are the most damaging economically, as defined by total economic damage in dollars.</p>
+
+</body>
+
+</html>
